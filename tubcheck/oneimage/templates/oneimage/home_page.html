@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuberculosis detection service</title>
+</head>
+<body>
+<p>Please select chest X-ray image and click "Submit" button.</p>
+<form action="/api/check" method="post" enctype="multipart/form-data">
+    <input type="file" name="image"/>
+    <input type="submit"/>
+</form>
+<p>This site uses CheXNet model</p>
+</body>
+</html>

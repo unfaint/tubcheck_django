@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 
 def home_page(request):
-    pass
+    return render(request, 'oneimage/home_page.html')
