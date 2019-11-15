@@ -2,6 +2,7 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from pygeckodriver import geckodriver_path
 import time
+import os
 
 
 class OneTimeCheck(StaticLiveServerTestCase):
@@ -23,9 +24,15 @@ class OneTimeCheck(StaticLiveServerTestCase):
         self.assertIn('CheXNet', page_text)
 
         # form for uploading is there
+        upload_input = self.browser.find_element_by_id('upload_input')
 
         # user picks an image file and clicks upload button
+        upload_input.send_keys(os.path.join(os.getcwd(), 'xray.jpg'))
+        self.browser.find_element_by_id('upload_button').click()
 
         # page with prediction results opens up
+        page_text = self.browser.find_element_by_tag_name('body').text
+        time.sleep(1)
+        self.assertIn('results', page_text)
 
         self.fail('Write the test!')

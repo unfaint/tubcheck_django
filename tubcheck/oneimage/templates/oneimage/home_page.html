@@ -6,9 +6,9 @@
 </head>
 <body>
 <p>Please select chest X-ray image and click "Submit" button.</p>
-<form action="/api/check" method="post" enctype="multipart/form-data">
-    <input type="file" name="image"/>
-    <input type="submit"/>
+<form id="upload_form" action="/oneimage/check" method="post" enctype="multipart/form-data">
+    <input id="upload_input" type="file" name="image"/>
+    <input id="upload_button" type="submit"/>
 </form>
 <p>This site uses CheXNet model</p>
 </body>
