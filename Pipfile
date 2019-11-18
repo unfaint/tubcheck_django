@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 selenium = "*"
 pygeckodriver = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.6"
